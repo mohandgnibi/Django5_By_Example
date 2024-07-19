@@ -24,13 +24,15 @@ def post_list(request):
     return render(request, 'blog/post/list.html', {'posts': posts})
 """
 
+
 # Class-based views
 class PostListView(ListView):
     """Alternative post list view"""
+
     queryset = Post.published.all()
-    context_object_name = 'posts'
+    context_object_name = "posts"
     paginate_by = 3
-    template_name = 'blog/post/list.html'
+    template_name = "blog/post/list.html"
 
 
 def post_detail(request, year, month, day, post):
@@ -42,14 +44,14 @@ def post_detail(request, year, month, day, post):
         publish__month=month,
         publish__day=day,
     )
-    return render(request, 'blog/post/detail.html', {'post': post})
+    return render(request, "blog/post/detail.html", {"post": post})
 
 
 def post_share(request, post_id):
     # Retrieve post by id
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
-    
-    if request.method == 'POST':
+
+    if request.method == "POST":
         # Form was submitted
         form = EmailPostForm(request.POST)
         if form.is_valid():
@@ -59,7 +61,7 @@ def post_share(request, post_id):
     else:
         form = EmailPostForm()
     context = {
-        'post': post,
-        'form': form,
+        "post": post,
+        "form": form,
     }
-    return render(request, 'blog/post/share.html', context)
+    return render(request, "blog/post/share.html", context)
