@@ -53,9 +53,9 @@ def post_detail(request, year, month, day, post):
     form = CommentForm()
 
     context = {
-        'post': post,
-        'comments': comments,
-        'form': form,
+        "post": post,
+        "comments": comments,
+        "form": form,
     }
     return render(request, "blog/post/detail.html", context)
 
@@ -66,18 +66,15 @@ def post_share(request, post_id):
 
     sent = False
 
-    if request.method == 'POST':
+    if request.method == "POST":
         # Form was submitted
         form = EmailPostForm(request.POST)
         if form.is_valid():
             # Form fields passed validation
             cd = form.cleaned_data
-            post_url = request.build_absolute_uri(
-                post.get_absolute_url()
-            )
+            post_url = request.build_absolute_uri(post.get_absolute_url())
             subject = (
-                f"{cd['name']} ({cd['email']}) "
-                f"recommends you read {post.title}"
+                f"{cd['name']} ({cd['email']}) " f"recommends you read {post.title}"
             )
             message = (
                 f"Read {post.title} at {post_url}\n\n"
@@ -87,7 +84,7 @@ def post_share(request, post_id):
                 subject=subject,
                 message=message,
                 from_email=None,
-                recipient_list=[cd['to']],
+                recipient_list=[cd["to"]],
             )
             sent = True
     else:
@@ -103,10 +100,7 @@ def post_share(request, post_id):
 
 @require_POST
 def post_comment(request, post_id):
-    post = get_object_or_404(Post,
-                             id=post_id,
-                             status=Post.Status.PUBLISHED
-                            )
+    post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
     comment = None
     # A comment was posted
     form = CommentForm(data=request.POST)
@@ -117,10 +111,6 @@ def post_comment(request, post_id):
         comment.post = post
         # Save the comment to the database
         comment.save()
-        
-    context = {
-        'post': post,
-        'form': form,
-        'comment': comment
-    }
-    return render(request, 'blog/post/comment.html', context)
+
+    context = {"post": post, "form": form, "comment": comment}
+    return render(request, "blog/post/comment.html", context)
