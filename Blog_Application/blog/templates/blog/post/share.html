@@ -8,6 +8,7 @@
     <p>
       "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
     </p>
+    <p><a href="{% url 'blog:post_list' %}">&laquo; All Posts</a></p>
   {% else %}
     <h1>Share "{{ post.title }}" by e-mail</h1>
     <form method="post" novalidate>
@@ -15,5 +16,6 @@
       {{ form.as_p }}
       <input type="submit" value="Send e-mail">
     </form>
+    
   {% endif %}
 {% endblock content %}
