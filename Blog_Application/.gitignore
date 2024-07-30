@@ -27,7 +27,7 @@ var/
 *.pyc
 __pycache__/
 local_settings.py
-
+*.json
 .env
 db.sqlite3
 
