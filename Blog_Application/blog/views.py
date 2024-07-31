@@ -139,21 +139,19 @@ def post_search(request):
     query = None
     results = []
 
-    if 'query' in request.GET:
+    if "query" in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
-            query = form.cleaned_data['query']
+            query = form.cleaned_data["query"]
             results = (
-                Post.published.annotate(
-                    similarity = TrigramSimilarity('title', query)
-                )
+                Post.published.annotate(similarity=TrigramSimilarity("title", query))
                 .filter(similarity__gte=0.1)
-                .order_by('-similarity')
+                .order_by("-similarity")
             )
 
     context = {
-        'form': form,
-        'query': query,
-        'results': results,
+        "form": form,
+        "query": query,
+        "results": results,
     }
-    return render(request, 'blog/post/search.html', context)
+    return render(request, "blog/post/search.html", context)

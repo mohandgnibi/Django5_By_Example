@@ -9,6 +9,4 @@ class Migration(migrations.Migration):
         ("blog", "0004_post_tags"),
     ]
 
-    operations = [
-        TrigramExtension()
-    ]
+    operations = [TrigramExtension()]
