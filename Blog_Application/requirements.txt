@@ -8,5 +8,8 @@ mypy-extensions==1.0.0
 packaging==24.1
 pathspec==0.12.1
 platformdirs==4.2.2
+psycopg==3.2.1
+psycopg2-binary==2.9.9
 python-decouple==3.8
 sqlparse==0.5.1
+typing_extensions==4.12.2

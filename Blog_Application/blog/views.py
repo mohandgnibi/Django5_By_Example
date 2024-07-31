@@ -5,7 +5,8 @@ from django.views.generic import ListView
 from django.core.mail import send_mail
 from django.db.models import Count
 from taggit.models import Tag
-from django.contrib.postgres.search import SearchVector
+from django.contrib.postgres.search import TrigramSimilarity
+
 
 from .models import Post
 from .forms import EmailPostForm, CommentForm, SearchForm
@@ -144,9 +145,10 @@ def post_search(request):
             query = form.cleaned_data['query']
             results = (
                 Post.published.annotate(
-                    search=SearchVector('title', 'body'),
+                    similarity = TrigramSimilarity('title', query)
                 )
-                .filter(search=query)
+                .filter(similarity__gte=0.1)
+                .order_by('-similarity')
             )
 
     context = {
