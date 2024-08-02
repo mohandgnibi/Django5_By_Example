@@ -9,11 +9,11 @@
   <body>
     <p>
       <h1>
-        <a href="{% url 'blog:post_list' %}">Home</a>  
+        <a href="{% url 'blog:post_list' %}">Home</a> 
+        <a href="{% url 'blog:post_search' %}">Search</a> 
       </h1>
     </p>
     <div id="content">
-      <a href="{% url 'blog:post_search' %}">Search</a>
       {% block content %}
       {% endblock content %}
     </div>
