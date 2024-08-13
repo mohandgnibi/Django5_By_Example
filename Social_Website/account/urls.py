@@ -4,45 +4,40 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Previous login url 
-    #path('login/', views.user_login, name='login'),
+    # Previous login url
+    # path('login/', views.user_login, name='login'),
     # Login / Logout urls
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-
+    path("login/", auth_views.LoginView.as_view(), name="login"),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     # Change password urls
     path(
-        'password-change/', 
-        auth_views.PasswordChangeView.as_view(), 
-        name='password_change'
+        "password-change/",
+        auth_views.PasswordChangeView.as_view(),
+        name="password_change",
     ),
     path(
-        'password-change/done/', 
-        auth_views.PasswordChangeDoneView.as_view(), 
-        name='password_change_done'
+        "password-change/done/",
+        auth_views.PasswordChangeDoneView.as_view(),
+        name="password_change_done",
     ),
-
     # Reset password urls
     path(
-        'password-reset/',
-        auth_views.PasswordResetView.as_view(),
-        name='password_reset'
+        "password-reset/", auth_views.PasswordResetView.as_view(), name="password_reset"
     ),
     path(
-        'password-reset/done/',
+        "password-reset/done/",
         auth_views.PasswordResetDoneView.as_view(),
-        name='password_reset_done'
+        name="password_reset_done",
     ),
     path(
-        'password-reset/<uidb64>/<token>/',
+        "password-reset/<uidb64>/<token>/",
         auth_views.PasswordResetConfirmView.as_view(),
-        name='password_reset_confirm'
+        name="password_reset_confirm",
     ),
     path(
-        'password-reset/complete/',
+        "password-reset/complete/",
         auth_views.PasswordResetCompleteView.as_view(),
-        name='password_reset_complete'
+        name="password_reset_complete",
     ),
-
-    path('', views.dashboard, name='dashboard'),
+    path("", views.dashboard, name="dashboard"),
 ]
