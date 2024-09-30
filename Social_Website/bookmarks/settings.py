@@ -31,7 +31,10 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    # Local
     "account.apps.AccountConfig",
+    
+    # Default django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
