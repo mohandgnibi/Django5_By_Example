@@ -30,6 +30,8 @@ local_settings.py
 *.json
 .env
 db.sqlite3
+*.crt
+*.key
 
 # Thumbnails
 ._*
@@ -37,4 +39,3 @@ db.sqlite3
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
