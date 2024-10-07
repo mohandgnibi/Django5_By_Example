@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Dashboard{% endblock title %}
 
@@ -11,11 +12,22 @@
   </p>
   
   {% if request.user.is_authenticated %}
-    <p><img src="{{ request.user.profile.photo.url }}" alt="Photo"></p>
+    <!-- Photo for profile -->
+    {% if request.user.profile.photo %}
+      <p><img src="{{ user.profile.photo.url }}" alt="Photo"></p>
+    {% else %}
+      <!-- Default photo -->
+      <p><img src="{% static 'images/default_img.png' %}"></p>
+    {% endif %}
+
     <p>Username: {{ request.user.username }}</p>
     <p>First name: {{ request.user.first_name }}</p>
     <p>Last name: {{ request.user.last_name }}</p>
     <p>Email: {{ request.user.email }}</p>
-    <p>Date of birth: {{ request.user.profile.date_of_birth }}</p>
+    
+    {% if request.user.profile.date_of_birth %}
+      <p>Date of birth: {{ request.user.profile.date_of_birth }}</p>
+    {% endif %}
+
   {% endif %}
 {% endblock content %}
