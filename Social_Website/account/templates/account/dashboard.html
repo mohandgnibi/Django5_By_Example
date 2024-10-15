@@ -4,30 +4,26 @@
 {% block title %}Dashboard{% endblock title %}
 
 {% block content %}
+
   <h1>Dashboard</h1>
+
+  {% with total_images_create=request.user.images_created.count %}
+    <p>
+      Welcome to your dashboard. You have bookmarked {{ total_images_create }}
+      image{{ total_images_create|pluralize }}.
+    </p>
+  {% endwith %}
+
   <p>
-    Welcom to your dashboard.
-    You can <a href="{% url 'edit' %}">Edit your profile</a>
-    or <a href="{% url 'password_change' %}">Change your password</a>.
+    Drag the following button to your bookmarks toolbar to bookmark images from other websites &rarr; 
+    <a href="javascript:{% include 'bookmarklet_launcher.js' %}" class="button">Bookmark it</a>
+  </p>
+
+  <p>
+    You can also 
+    <a href="{% url 'edit' %}">edit your profile</a> 
+    or 
+    <a href="{% url 'password_change' %}">change your password</a>.
   </p>
   
-  {% if request.user.is_authenticated %}
-    <!-- Photo for profile -->
-    {% if request.user.profile.photo %}
-      <p><img src="{{ user.profile.photo.url }}" alt="Photo"></p>
-    {% else %}
-      <!-- Default photo -->
-      <p><img src="{% static 'images/default_img.png' %}"></p>
-    {% endif %}
-
-    <p>Username: {{ request.user.username }}</p>
-    <p>First name: {{ request.user.first_name }}</p>
-    <p>Last name: {{ request.user.last_name }}</p>
-    <p>Email: {{ request.user.email }}</p>
-    
-    {% if request.user.profile.date_of_birth %}
-      <p>Date of birth: {{ request.user.profile.date_of_birth }}</p>
-    {% endif %}
-
-  {% endif %}
 {% endblock content %}
