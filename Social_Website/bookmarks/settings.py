@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # Local
     "account.apps.AccountConfig",
     "images.apps.ImagesConfig",
+    "actions.apps.ActionsConfig",
     # Default django apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -177,5 +178,5 @@ SOCIAL_AUTH_PIPELINE = [
 ]
 
 ABSOLUTE_URL_OVERRIDES = {
-    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+    "auth.user": lambda u: reverse_lazy("user_detail", args=[u.username])
 }
