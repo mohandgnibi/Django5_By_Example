@@ -5,7 +5,6 @@ from coupons.models import Coupon
 from shop.models import Product
 
 
-
 class Cart:
     def __init__(self, request):
         """
@@ -18,7 +17,7 @@ class Cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
         # Store current applied coupon
-        self.coupon_id = self.session.get('coupon_id')
+        self.coupon_id = self.session.get("coupon_id")
 
     def __iter__(self):
         """
@@ -92,9 +91,7 @@ class Cart:
 
     def get_discount(self):
         if self.coupon:
-            return (
-                self.coupon.discount / Decimal(100)
-            ) * self.get_total_price()
+            return (self.coupon.discount / Decimal(100)) * self.get_total_price()
         return Decimal(0)
 
     def get_total_price_after_discount(self):

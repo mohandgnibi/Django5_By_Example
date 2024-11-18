@@ -19,7 +19,7 @@ class Order(models.Model):
     stripe_id = models.CharField(max_length=250, blank=True)
     coupon = models.ForeignKey(
         Coupon,
-        related_name='orders',
+        related_name="orders",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -37,7 +37,7 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order {self.id}"
-    
+
     def get_total_cost_before_discount(self):
         return sum(item.get_cost() for item in self.items.all())
 
