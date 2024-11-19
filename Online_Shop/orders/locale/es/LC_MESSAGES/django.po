@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 21:19+0100\n"
+"POT-Creation-Date: 2024-11-19 22:49+0100\n"
 "PO-Revision-Date: 2024-01-04 20:12+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,6 +71,10 @@ msgstr "Total"
 msgid "Place order"
 msgstr "Realizar compra"
 
+#: orders/urls.py:9
+msgid "create/"
+msgstr "crear/"
+
 #~ msgid "My shop"
 #~ msgstr "Mi tienda"
 
@@ -113,6 +117,3 @@ msgstr "Realizar compra"
 
 #~ msgid "Pending payment"
 #~ msgstr "Pendiente de pago"
-
-#~ msgid "create/"
-#~ msgstr "crear/"
