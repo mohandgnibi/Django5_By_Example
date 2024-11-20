@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 22:49+0100\n"
+"POT-Creation-Date: 2024-11-20 22:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cart/forms.py:11
+#: cart/forms.py:11 cart/templates/cart/detail.html:15
+#: payment/templates/payment/process.html:14
 msgid "Quantity"
+msgstr ""
+
+#: cart/templates/cart/detail.html:5 cart/templates/cart/detail.html:9
+msgid "Your shopping cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:13
+#: env/lib/python3.12/site-packages/django/db/models/fields/files.py:420
+#: payment/templates/payment/process.html:11
+msgid "Image"
+msgstr ""
+
+#: cart/templates/cart/detail.html:14 payment/templates/payment/process.html:12
+msgid "Product"
+msgstr ""
+
+#: cart/templates/cart/detail.html:16
+msgid "Remove"
+msgstr ""
+
+#: cart/templates/cart/detail.html:17
+msgid "Unit price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:18 payment/templates/payment/process.html:13
+msgid "Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:53 payment/templates/payment/process.html:34
+msgid "Subtotal"
+msgstr ""
+
+#: cart/templates/cart/detail.html:59
+#, python-format
+msgid ""
+"\n"
+"              \"%(code)s\" coupon (%(discount)s%% off)\n"
+"            "
+msgstr ""
+
+#: cart/templates/cart/detail.html:81
+#: shop/templates/shop/product/detail.html:29
+msgid "People who bought this also bought"
+msgstr ""
+
+#: cart/templates/cart/detail.html:94
+msgid "Apply a coupon"
+msgstr ""
+
+#: cart/templates/cart/detail.html:101
+msgid "Continue shopping"
+msgstr ""
+
+#: cart/templates/cart/detail.html:102
+msgid "Checkout"
 msgstr ""
 
 #: coupons/forms.py:6
@@ -727,10 +783,6 @@ msgstr ""
 
 #: env/lib/python3.12/site-packages/django/db/models/fields/files.py:244
 msgid "File"
-msgstr ""
-
-#: env/lib/python3.12/site-packages/django/db/models/fields/files.py:420
-msgid "Image"
 msgstr ""
 
 #: env/lib/python3.12/site-packages/django/db/models/fields/json.py:24
@@ -1677,6 +1729,51 @@ msgstr ""
 msgid "coupons/"
 msgstr ""
 
+#: payment/templates/payment/canceled.html:4
+msgid "Payment canceled"
+msgstr ""
+
+#: payment/templates/payment/canceled.html:7
+msgid "Your payment has not been processed"
+msgstr ""
+
+#: payment/templates/payment/canceled.html:8
+msgid "There was a problem processing your payment."
+msgstr ""
+
+#: payment/templates/payment/completed.html:4
+msgid "Payment successful"
+msgstr ""
+
+#: payment/templates/payment/completed.html:7
+msgid "Your payment was successful"
+msgstr ""
+
+#: payment/templates/payment/completed.html:8
+msgid "Your payment has been processed successfully."
+msgstr ""
+
+#: payment/templates/payment/process.html:4
+msgid "Pay your order"
+msgstr ""
+
+#: payment/templates/payment/process.html:7
+msgid "Order summary"
+msgstr ""
+
+#: payment/templates/payment/process.html:15
+#: payment/templates/payment/process.html:54
+msgid "Total"
+msgstr ""
+
+#: payment/templates/payment/process.html:42
+#, python-format
+msgid ""
+"\n"
+"              \"%(code)s\" (%(discount)s%% off)\n"
+"            "
+msgstr ""
+
 #: payment/urls.py:9
 msgid "process/"
 msgstr ""
@@ -1689,15 +1786,19 @@ msgstr ""
 msgid "canceled/"
 msgstr ""
 
-#: shop/templates/shop/base.html:8 shop/templates/shop/base.html:13
+#: shop/templates/shop/base.html:8 shop/templates/shop/base.html:14
 msgid "My shop"
 msgstr ""
 
 #: shop/templates/shop/base.html:19
+msgid "Language"
+msgstr ""
+
+#: shop/templates/shop/base.html:37
 msgid "Your cart"
 msgstr ""
 
-#: shop/templates/shop/base.html:21
+#: shop/templates/shop/base.html:39
 #, python-format
 msgid ""
 "\n"
@@ -1710,7 +1811,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: shop/templates/shop/base.html:28
+#: shop/templates/shop/base.html:46
 msgid "Your cart is empty."
 msgstr ""
 
@@ -1718,6 +1819,15 @@ msgstr ""
 msgid "Add to cart"
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:29
-msgid "People who bought this also bought"
+#: shop/templates/shop/product/list.html:5
+#: shop/templates/shop/product/list.html:23
+msgid "Products"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:10
+msgid "Categories"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:13
+msgid "All"
 msgstr ""
