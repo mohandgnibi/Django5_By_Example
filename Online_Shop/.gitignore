@@ -33,6 +33,7 @@ db.sqlite3
 *.crt
 *.key
 *.sh
+media/
 
 # Thumbnails
 ._*
