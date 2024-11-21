@@ -29,16 +29,12 @@ urlpatterns = i18n_patterns(
     path(_("orders/"), include("orders.urls", namespace="orders")),
     path(_("payment/"), include("payment.urls", namespace="payment")),
     path(_("coupons/"), include("coupons.urls", namespace="coupons")),
-    path("rosetta/", include("rosetta.urls")), # 3th party
+    path("rosetta/", include("rosetta.urls")),  # 3th party
     path("", include("shop.urls", namespace="shop")),
 )
 
 urlpatterns += [
-    path(
-        "payment/webhook/",
-        webhooks.stripe_webhook,
-        name="stripe-webhook"
-    ),
+    path("payment/webhook/", webhooks.stripe_webhook, name="stripe-webhook"),
 ]
 
 if settings.DEBUG:

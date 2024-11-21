@@ -8,7 +8,7 @@ class Category(TranslatableModel):
         name=models.CharField(max_length=200),
         slug=models.SlugField(max_length=200, unique=True),
     )
-    
+
     class Meta:
         # ordering = ["name"]
         # indexes = [

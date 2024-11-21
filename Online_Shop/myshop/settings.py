@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "localflavor",
     "parler",
     "rosetta",
-
     # Local
     "cart.apps.CartConfig",
     "coupons.apps.CouponsConfig",
@@ -123,12 +122,12 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en"
 
 LANGUAGES = [
-    ('en', _('English')),
-    ('es', _('Spanish')),
+    ("en", _("English")),
+    ("es", _("Spanish")),
 ]
 
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',
+    BASE_DIR / "locale",
 ]
 
 TIME_ZONE = "UTC"
@@ -171,11 +170,11 @@ REDIS_DB = 1
 # django-parler settings
 PARLER_LANGUAGES = {
     None: (
-        {'code': 'en'},
-        {'code': 'es'},
+        {"code": "en"},
+        {"code": "es"},
     ),
-    'default': {
-        'fallback': 'en',
-        'hide_untranslated': False,
+    "default": {
+        "fallback": "en",
+        "hide_untranslated": False,
     },
 }

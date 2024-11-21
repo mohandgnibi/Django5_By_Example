@@ -27,4 +27,3 @@ class ProductAdmin(TranslatableAdmin):
 
     def get_prepopulated_fields(self, request, obj=None):
         return {"slug": ("name",)}
-
