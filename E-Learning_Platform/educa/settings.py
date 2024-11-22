@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Local
-    'cources.apps.CourcesConfig',
+    'courses.apps.CoursesConfig',
 
     # Default Django apps.
     'django.contrib.admin',
