@@ -177,4 +177,5 @@ class ContentOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
                 id=id, module__course__owner=request.user
             ).update(order=order)
         return self.render_json_response({'saved': 'OK'})
+
     
