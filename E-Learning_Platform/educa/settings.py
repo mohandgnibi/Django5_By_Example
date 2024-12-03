@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Local
     'courses.apps.CoursesConfig',
+    'students.apps.StudentsConfig',
 
     # Default Django apps.
     'django.contrib.admin',
