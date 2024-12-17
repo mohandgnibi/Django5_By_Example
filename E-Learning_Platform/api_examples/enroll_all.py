@@ -2,10 +2,8 @@ from decouple import config
 import requests
 
 
-
 username = config('username')
 password = config('password')
-
 
 base_url = 'http://127.0.0.1:8000/api/'
 url = f'{base_url}courses/'
