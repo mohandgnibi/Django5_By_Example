@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # Local
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'chat.apps.ChatConfig',
 
     # Default Django apps.
     'django.contrib.admin',
