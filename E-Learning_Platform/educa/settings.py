@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Daphne ASGI application server
     'daphne',
     # Local
     'courses.apps.CoursesConfig',
