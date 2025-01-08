@@ -10,7 +10,7 @@ WORKDIR /code
 
 # Install dependencies
 RUN pip install --upgrade pip
-COPY requirement.txt .
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy the Django project
